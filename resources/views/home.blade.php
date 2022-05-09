@@ -1,7 +1,12 @@
 @extends('template')
 
 @section('content')
-    <div class="container w-25 border p-4 mt-4">
-        <h1> Welcome </h1>
-    </div>
+    <h1> Home </h1>
+    @auth
+        <p>Bienvenido <strong> {{ auth()->user()->name ?? auth()->user()->username }}</strong>, estás autenticado </p>
+    @endauth
+
+    @guest
+        <p> Inicia sesión para ver el contenido. puedes registrarte en el siguiente <a href="/login">link </a> </p>
+    @endguest
 @endsection
