@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
@@ -20,13 +21,21 @@ class LoginController extends Controller
         $credentials = $request->getCredentials();
         if( !Auth::validate($credentials) ) {
             return redirect()->to('/login')->withErrors('auth.failed');
+        } else {
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
+            Auth::login($user);
+            return $this->authenticated($request, $user);
         }
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
-        Auth::login($user);
-        return $this->authenticated($request, $user);
     }
 
     public function authenticated(Request $request, $user) {
         return redirect('/home');
     }
+
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+        return redirect()->to('/login');
+    }
+
 }

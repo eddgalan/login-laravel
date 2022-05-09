@@ -4,6 +4,7 @@
     <h1> Home </h1>
     @auth
         <p>Bienvenido <strong> {{ auth()->user()->name ?? auth()->user()->username }}</strong>, estás autenticado </p>
+        <p><a href="/logout">Logout</a></p>
     @endauth
 
     @guest
