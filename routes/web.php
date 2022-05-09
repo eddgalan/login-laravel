@@ -19,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/register', [RegisterController::class, 'show'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register_post');
 Route::get('/login', [LoginController::class, 'show'])->name('login');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login_post');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/home', [HomeController::class, 'show'])->name('home');

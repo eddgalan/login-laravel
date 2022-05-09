@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container w-25 p-4 mt-4 custom-card">
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('login_post') }}" method="POST">
             <h2 class="text-center"> Login </h2>
             @csrf
             @include('messages')
