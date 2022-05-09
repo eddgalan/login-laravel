@@ -18,9 +18,9 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/register', [RegisterController::class, 'show']);
-Route::post('/register', [RegisterController::class, 'register']);
-Route::get('/login', [LoginController::class, 'show']);
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout']);
-Route::get('/home', [HomeController::class, 'show']);
+Route::get('/register', [RegisterController::class, 'show'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/home', [HomeController::class, 'show'])->name('home');

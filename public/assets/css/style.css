@@ -1,0 +1,8 @@
+body {
+    background-color: #EDEDED;
+}
+.custom-card {
+    background-color: #FFF;
+    border-radius: 1rem;
+    border: 1px solid #B6B6B6 !important;
+}
