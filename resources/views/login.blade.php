@@ -1,8 +1,9 @@
 @extends('template')
 
 @section('content')
-    <div class="container w-25 border p-4 mt-4 custom-card">
+    <div class="container w-25 p-4 mt-4 custom-card">
         <form action="{{ route('login') }}" method="POST">
+            <h2 class="text-center"> Login </h2>
             @csrf
             <div class="col-md-12 py-1 form-floating">
                 <input type="text" class="form-control" name="username" placeholder="Username or email" required>
