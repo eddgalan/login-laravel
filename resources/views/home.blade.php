@@ -3,7 +3,7 @@
 @section('content')
     <h1> Home </h1>
     @auth
-        <p>Bienvenido <strong> {{ auth()->user()->name ?? auth()->user()->username }}</strong>.</p>
+        <p>Bienvenido(a) <strong> {{ auth()->user()->name ?? auth()->user()->username }}</strong>.</p>
     @endauth
 
     @guest

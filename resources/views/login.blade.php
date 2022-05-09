@@ -5,6 +5,7 @@
         <form action="{{ route('login') }}" method="POST">
             <h2 class="text-center"> Login </h2>
             @csrf
+            @include('messages')
             <div class="col-md-12 py-1 form-floating">
                 <input type="text" class="form-control" name="username" placeholder="Username or email" required>
                 <label for="username" class="form-label">Username or email</label>

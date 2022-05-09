@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container w-25 p-4 mt-4 custom-card">
-        <form action="/register" method="POST">
+        <form action="{{ route('register_post') }}" method="POST">
             <h2 class="text-center"> Register </h2>
             @csrf
+            @include('messages')
             <div class="col-md-12 py-1 form-floating">
                 <input type="text" class="form-control" name="name" placeholder="Name" required>
                 <label for="name" class="form-label">Name</label>
